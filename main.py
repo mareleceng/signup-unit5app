@@ -76,8 +76,7 @@ class Mainpage(Handler):
         if  have_error:    
             self.render('signup.html', ** params)
         else:           
-            self.render('welcome.html', username=username)
-            
+            self.redirect('/welcome?username=' + username)
 app = webapp2.WSGIApplication([('/', Mainpage)
                              ],                                  
                            debug=True)
